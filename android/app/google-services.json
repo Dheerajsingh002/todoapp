@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148975463842",
+    "project_id": "fir-signin-cfc4e",
+    "storage_bucket": "fir-signin-cfc4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148975463842:android:3453adb286dfe97b1fd6fb",
+        "android_client_info": {
+          "package_name": "com.example.todoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148975463842-fu301il1qdtiecrc09sohhfmuqptikhf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8RDqedb9UO9bB1VeARZGEJ2Oct5ecVGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148975463842-fu301il1qdtiecrc09sohhfmuqptikhf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
