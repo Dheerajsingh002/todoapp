@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:todoapp/Screen0.dart';
 class SignInWithGoogle extends StatefulWidget {
   const SignInWithGoogle({Key? key}) : super(key: key);
 
@@ -31,6 +32,10 @@ class _SignInWithGoogleState extends State<SignInWithGoogle> {
     } catch (error) {
       print(error);
     }
+    Navigator.push(context, MaterialPageRoute(builder: (context){
+            return const Screen0();
+
+          }));
   }
 
   Future<void> logout() async {
@@ -43,37 +48,44 @@ class _SignInWithGoogleState extends State<SignInWithGoogle> {
       appBar: AppBar(
           title: const Text('SignInWithGoogle',
               style: TextStyle(fontSize: 30)),
-          flexibleSpace: GestureDetector(
-            onTap: (){
-              googleLogin();
-            },
-            child: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.purple,Colors.red],
-                begin: Alignment.bottomRight,
-                end: Alignment.topLeft)
-              ),
+              actions: [
+                GestureDetector(
+                  onTap: (){
+                    logout();
+                  },
+                  child: const Center(child: Text("Logout",style: TextStyle(color: Color.fromARGB(255, 14, 21, 169),fontSize: 20),)))
+              ],
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [Colors.purple,Colors.red],
+              begin: Alignment.bottomRight,
+              end: Alignment.topLeft)
             ),
           ),
           ),
           body: Center(
-            child: Container(
-              margin: const EdgeInsets.all(25),
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30), color: Colors.white,
-                      gradient: const LinearGradient(colors: [Colors.purple,Colors.red],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft)
-                    ),
-                    
-                width: MediaQuery.of(context).size.width,
-                child: const Text(
-                  "Sign In with Google",
-                  style: TextStyle(fontSize: 17,color: Colors.white),
-                  textAlign: TextAlign.center,
+            child: GestureDetector(
+              onTap: (){
+                googleLogin();
+              },
+              child: Container(
+                margin: const EdgeInsets.all(25),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30), color: Colors.white,
+                        gradient: const LinearGradient(colors: [Colors.purple,Colors.red],
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft)
+                      ),
+                      
+                  width: MediaQuery.of(context).size.width,
+                  child: const Text(
+                    "Sign In with Google",
+                    style: TextStyle(fontSize: 17,color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-              ),
+            ),
           ),);
 
     
